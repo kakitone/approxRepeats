@@ -1,5 +1,8 @@
 Tutorial
 ========
+
+It is a tutorial on how to analyze genome approximate repeats by MUMMER and our tool ApproxRepeatAnalyzer. 
+
 Suggested operating system : Mac OS X / Linux  
 
 Analysis of exact and approximate repeats by MUMMER
