@@ -1,6 +1,6 @@
 Tutorial
 ========
-Suggested setup OS requirement : Mac OS X / Linux  
+Suggested operating system : Mac OS X / Linux  
 
 Analysis of exact and approximate repeats by MUMMER
 ---------------------------------------------------
@@ -39,9 +39,79 @@ Here is a step-by-step tutorial to download, run and experiment with MUMMER.
 
    > ...
 
-8. Extract approximate repeat statistics with repeat homology of >= 95% 
+8. We need to create an alignment file. 
 
-9. View the dot plot of the approximate repeats. 
+        ./nucmer --maxmatch -nosimplify ecoli.fasta ecoli.fasta
+   
+   The output will be in a file called out.delta 
+   
+9. We can then obtain approximate repeat statistics with repeat homology of >= 95% with length >= 500 by, 
+
+        ./delta-filter -l500 -i95 out.delta > filter.delta 
+         
+10. Let us look at the filter.delta
+
+         more filter.delta
+         
+    and you will see something like 
+    > gi|110341805|gb|CP000247.1| gi|110341805|gb|CP000247.1| 4938920 4938920
+    
+    > 1 4938920 1 4938920 0 0 0
+    
+    > 0
+    
+    > 227625 232949 4418733 4424057 12 12 0
+    
+    > 0
+    
+    > 227694 232953 3538642 3533381 8 8 0
+    
+    > -6
+    
+    > -2801
+    
+    > 0
+    
+    > 227785 229525 4241245 4242985 6 6 0
+    
+    > -44
+    
+    > 1690
+    
+    > 0
+    
+10. Here is the official explanation of what these numbers mean (by the MUMMER manual http://mummer.sourceforge.net/manual/)
+  <pre>
+       An example header might look like:
+       
+       2631 3401 2464 3234 15 15 2
+       Notice that the start coordinate points to the first base in the first codon, 
+     and the end coordinate points to the last base in the last codon. 
+     Therefore making (end - start + 1) % 3 = 0. This makes
+     determining the frame of the amino acid alignment a simple 
+     matter of determining the reading frame of the start coordinate 
+     for the reference and query. Obviously, these calculations are 
+     not necessary when dealing with vanilla DNA alignments.
+       
+       Each of these alignment headers is followed by a string of 
+     signed digits, one per line, with the final line before the next
+     header equaling 0 (zero). Each digit represents the distance 
+     to the next insertion in the reference (positive int) or deletion 
+     in the reference (negative int), as measured in DNA bases OR
+     amino acids depending on the alignment data type. For example
+     , with the PROMER data type, the delta sequence (1, -3, 4, 0) would 
+     represent an insertion at positions 1 and 7 in the translated 
+     reference sequence and an insertion at position 3 in the
+     translated query sequence. Or with letters:
+     
+     
+     A = ABCDACBDCAC$
+     B = BCCDACDCAC$
+     Delta = (1, -3, 4, 0)
+     A = ABC.DACBDCAC$
+     B = .BCCDAC.DCAC$
+  </pre>
+
 
 Indepth analysis of the approximate repeat with our ApproxRepeatAnalyzer pipelined with MUMMER
 ----------------------------------------------------------------------------------------------
