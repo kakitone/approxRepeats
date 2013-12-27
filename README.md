@@ -44,7 +44,7 @@ Here is a step-by-step tutorial to download, run and experiment with MUMMER.
 
 8. We need to create an alignment file. 
 
-        ./nucmer --maxmatch -nosimplify ecoli.fasta ecoli.fasta
+        ./nucmer --maxmatch --nosimplify ecoli.fasta ecoli.fasta
    
    The output will be in a file called out.delta 
    
@@ -119,6 +119,7 @@ Here is a step-by-step tutorial to download, run and experiment with MUMMER.
 Indepth analysis of the approximate repeat with our ApproxRepeatAnalyzer pipelined with MUMMER
 ----------------------------------------------------------------------------------------------
 Here is a step-by-step commands to pipeline MUMMER with our approximate repeat analyzer (ApproxRepeatAnalyzer)
+
 1. Download the files in this repository. 
 
 2. Generate detail analysis plots and analysis of approximate repeats.
