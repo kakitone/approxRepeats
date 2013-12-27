@@ -85,8 +85,20 @@ Here is a step-by-step tutorial to download, run and experiment with MUMMER.
     
 10. Here is the official explanation of what these numbers mean (by the MUMMER manual http://mummer.sourceforge.net/manual/)
   <pre>
-       An example header might look like:
-       
+          Following this sequence header is the alignment data. 
+     Each alignment following also has a header that describes 
+     the coordinates of the alignment and some error information. 
+     These coordinates are inclusive and reference the forward 
+     strand of the DNA sequence, regardless of the alignment
+     type (DNA or amino acid). Thus, if the start coordinate is 
+     greater than the end coordinate, the alignment is on the reverse 
+     strand. The four coordinates are the start and end in the 
+     reference and the start and end in the query respectively. The
+     three digits following the location coordinates are the number 
+     of errors (non-identities + indels), similarity errors 
+     (non-positive match scores), and stop codons (does not apply to
+     DNA alignments, will be "0"). An example header might look like:
+
        2631 3401 2464 3234 15 15 2
        Notice that the start coordinate points to the first base in the first codon, 
      and the end coordinate points to the last base in the last codon. 
