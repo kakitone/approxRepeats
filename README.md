@@ -1,8 +1,5 @@
-Tutorial to analyze long approximate repeats of genome. 
-=============
 
 This is a tutorial on how one can analyze approximate repeats of genome. 
-
 
 Using MUMMER
 =====
