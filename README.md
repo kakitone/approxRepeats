@@ -134,6 +134,15 @@ Here is a step-by-step commands to pipeline MUMMER with our approximate repeat a
 
 1. Download the files in this repository. 
 
-2. Generate detail analysis plots and analysis of approximate repeats.
+2. Generate sliding window plot to view the neighborhood and interior of an approximate repeat. 
 
-3. Let us walk through the files generated.
+3. Genearte extension plot to compare the neighborhood and interior of several long approximate repeats.
+
+4. Generate scatter plot to characterize the extension and SNP rate of the long approximate repeats. 
+
+5. Generate exact repeat spectrum of simple, interleaved and triple exact repeats.
+
+6. Generate approximate repeat spectrum of simple, interleaved and triple approximate repeats. 
+
+7. Generate combined repeat spectrum of simple, interleaved and triple exact/approximate repeats. 
+
