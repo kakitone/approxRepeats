@@ -894,7 +894,6 @@ def editDistance(str1, str2, windowSize, threshold):
             else:
                 currentRow[index2] = min(currentRow[index2-1] +1 ,currentCol[index2-1] +1 , lastRow[index2-1] + checkCurrentBase )            
                 currentCol[index2] = min(currentCol[index2-1] +1, currentRow[index2-1] +1, lastCol[index2-1]+ checkCurrentBase )
-                
         
         listOfDiagonalPoints.append(currentRow[index])
          
@@ -1699,7 +1698,7 @@ def slidingWindowPlot(filepath, option):
 
 
 
-slidingWindowPlot("ecoli.fasta", "run") 
+#slidingWindowPlot("ecoli.fasta", "run") 
 
 #viewdata()
 #generateCombineComplement()   

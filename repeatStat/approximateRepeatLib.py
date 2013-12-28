@@ -526,6 +526,9 @@ def  filterSameApproxRepeat(listOfApproxRepeat):
     return listOfApproxRepeatNew 
 
 def clusteringRepeatMain(folderName, listOfData, topX, typeOfRepeat, errorType, longestExactRepeat, premapping):
+    
+    
+    print "typeOfRepeat", typeOfRepeat
     listOfApproxRepeat = []
 
     if listOfData[0][0] == 1 and listOfData[0][1] == 1:
@@ -577,6 +580,7 @@ def clusteringRepeatMain(folderName, listOfData, topX, typeOfRepeat, errorType, 
     if len(premapping) == 0 and typeOfRepeat == 'r' and errorType == 'h' :
         listOfApproxRepeat = sorted(listOfApproxRepeat, key = itemgetter(2),reverse = True)
         plotdetailedPatternForTopRepeats(folderName,topX, listOfApproxRepeat,False)  
+        
         plotdetailedPatternForTopRepeats2(folderName,topX, listOfApproxRepeat,False)  
         
     if len(premapping) == 0 and typeOfRepeat == 'c' and errorType == 'h':
@@ -815,11 +819,13 @@ def detailRepeatPattern2(genomeSource1,genomeSource2, startpt1, startpt2, lrepea
     
     
 def plotdetailedPatternForTopRepeats2(folderName, topX, dataList,inverted = False):
+    
     print dataList    
     ### Input format : [startIndex1, startIndex2, lapprox, mutationRate,lengthOfExactRepeat,start1,start2])
     dataList = sorted(dataList, key = itemgetter(2), reverse = True)
     dataList[min(topX, len(dataList)):]    = []
     dataList = sorted(dataList, key = itemgetter(2))
+
     
     lengthOfRepeatList = []
     for plotindex  in range(2):
@@ -829,6 +835,7 @@ def plotdetailedPatternForTopRepeats2(folderName, topX, dataList,inverted = Fals
             plt.xlim(-0.25,0.25)
             plt.ylim(0,6)
         
+        #assert(1==2)
         colors= cm.rainbow(np.linspace(0, 1, min(topX,len(dataList))))
         #colors  = []
         #for index in range(len(reversecolors)-1, -1,-1):
@@ -867,7 +874,7 @@ def plotdetailedPatternForTopRepeats2(folderName, topX, dataList,inverted = Fals
             plt.plot(plotX, plotY,linewidth=1, marker = 'x', color = c,label= str(eachitem[2])+" , "+ str(eachitem[4]))
          
             for index in range(len(plotX)):        
-              writer.writerow([counterindex, int(plotX[index]*lrepeat), lrepeat,int(plotY[index]*lrepeat)])
+                writer.writerow([counterindex, int(plotX[index]*lrepeat), lrepeat,int(plotY[index]*lrepeat)])
             
             
             counterindex = counterindex +1 
@@ -898,9 +905,9 @@ def plotdetailedPatternForTopRepeats2(folderName, topX, dataList,inverted = Fals
                 plt.savefig("regionBeyondRepeat/bestFit_twoSides/"+folderName+"_approxRepeatAnalysisPlot.png") 
 
         else:
-           if plotindex  == 0:       
+            if plotindex  == 0:       
                 plt.savefig("regionBeyondRepeat/FixScale_twoSides/"+folderName+"_inverted_approxRepeatAnalysisPlot.png") 
-           else:
+            else:
                 plt.savefig("regionBeyondRepeat/bestFit_twoSides/"+folderName+"_inverted_approxRepeatAnalysisPlot.png") 
   
   
@@ -920,9 +927,10 @@ def plotdetailedPatternForTopRepeats(folderName, topX, dataList,inverted = False
     for plotindex  in range(2):
         plt.figure(figsize=(16.0, 10))
         plt.grid(which = 'both')
+        
         if plotindex  == 0:
             plt.xlim(0,0.45)
-            plt.ylim(0.9,8)
+            plt.ylim(0,8)
         
         counterindex = 0
         
@@ -951,7 +959,7 @@ def plotdetailedPatternForTopRepeats(folderName, topX, dataList,inverted = False
             plotY = []
             plotX = []
             for inneritem in outputList:
-                plotY.append(inneritem[1]/float(lrepeat))
+                plotY.append(inneritem[1]/float(lrepeat)-1)
                 plotX.append(inneritem[0]/float(lrepeat))
             
             plotY2 = []
@@ -962,7 +970,7 @@ def plotdetailedPatternForTopRepeats(folderName, topX, dataList,inverted = False
             lengthOfRepeatList.append(str(eachitem[2])+" , "+ str(eachitem[4]))
             
             for index in range(len(plotX)):        
-              writer.writerow([counterindex, index, lrepeat,int(plotY[index]*lrepeat)])
+                writer.writerow([counterindex, index, lrepeat,int(plotY[index]*lrepeat)])
             
 
             counterindex = counterindex +1 
@@ -992,9 +1000,9 @@ def plotdetailedPatternForTopRepeats(folderName, topX, dataList,inverted = False
                 plt.savefig("regionBeyondRepeat/bestFit_greedy/"+folderName+"_approxRepeatAnalysisPlot.png") 
 
         else:
-           if plotindex  == 0:       
+            if plotindex  == 0:       
                 plt.savefig("regionBeyondRepeat/FixScale_greedy/"+folderName+"_inverted_approxRepeatAnalysisPlot.png") 
-           else:
+            else:
                 plt.savefig("regionBeyondRepeat/bestFit_greedy/"+folderName+"_inverted_approxRepeatAnalysisPlot.png") 
 
 
@@ -1087,9 +1095,9 @@ def  plotdetailedPatternForTopRepeats2Edit(folderName, topX, dataList,inverted =
                 plt.savefig("regionBeyondRepeat/bestFit_twoSides/"+folderName+"_approxRepeatAnalysisPlotEditDistance.png") 
 
         else:
-           if plotindex  == 0:       
+            if plotindex  == 0:       
                 plt.savefig("regionBeyondRepeat/FixScale_twoSides/"+folderName+"_inverted_approxRepeatAnalysisPlotEditDistance.png") 
-           else:
+            else:
                 plt.savefig("regionBeyondRepeat/bestFit_twoSides/"+folderName+"_inverted_approxRepeatAnalysisPlotEditDistance.png") 
   
   

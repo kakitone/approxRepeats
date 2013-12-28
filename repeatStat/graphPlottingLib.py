@@ -277,7 +277,7 @@ def plotClusteringOfRepeat(listOfApproxRepeat,folderName):
     
     plt.title("Classification of approximate repeat for " +  folderName,fontsize=defaultsize)
     plt.xlabel("Mutation Rate = number of mutation / ( l_approx - l_exact) ",fontsize=defaultsize)
-    plt.ylabel("Stretch = \n   l_approx / l_exact ",fontsize=defaultsize)
+    plt.ylabel(" l_approx / l_exact ",fontsize=defaultsize)
     
     
 def plotApproxRepeatSpectrum(listOfApproxRepeat,longestExactRepeat,folderName):

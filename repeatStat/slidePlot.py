@@ -122,4 +122,4 @@ def plotPatternBeyondRepeat(genomeSource1,genomeSource2,  start1,  start2, plotR
 def main(argv):
     slidingWindowPlot(argv[0],argv[1],int(argv[2]) ,int(argv[3]) ,int(argv[4]),  int(argv[5])) 
 if __name__ == "__main__":
-   main(sys.argv[1:])
+    main(sys.argv[1:])

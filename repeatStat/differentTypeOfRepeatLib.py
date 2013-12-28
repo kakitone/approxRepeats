@@ -52,6 +52,7 @@ def findDifferentTypesOfRepeat(dataList,topX):
     metaListForInterleaveRepeat = sorted(metaListForInterleaveRepeat, key= itemgetter(-1), reverse = True )
     metaListForTripleRepeat = sorted(metaListForTripleRepeat, key= itemgetter(-1), reverse = True) 
     
+    '''
     print "metaListForInterleaveRepeat"
     for index in range(len(metaListForInterleaveRepeat)):
         tempdata = metaListForInterleaveRepeat[index] 
@@ -59,7 +60,8 @@ def findDifferentTypesOfRepeat(dataList,topX):
     print "metaListForTripleRepeat"
     for index in  range(len(metaListForTripleRepeat)):
         print metaListForTripleRepeat[index]
-        
+    '''
+      
     return metaListForInterleaveRepeat[0:min(len(metaListForInterleaveRepeat),topX)], metaListForTripleRepeat[0:min(len(metaListForTripleRepeat),topX)]
 
 
