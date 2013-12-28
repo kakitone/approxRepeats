@@ -148,15 +148,20 @@ Here is a step-by-step commands to pipeline MUMMER with our approximate repeat a
    
    Here "~/Downloads/MUMmer3.23/mummer" is where you put MUMMER, "ecoli.fasta" is the genome file, "Escherichia_coli_536" is the working folder, and 30 is the number of long seed exact repeats to be used to generate the plots. 
 
-4. Let us understand what these plots tell us here. 
+4. Let us understand what these plots tell us here. (Hamming and edit distance are both analyzed, but for simplicity, let us focus on Hamming distance here)
 
-5. Genearte extension plot to compare the neighborhood and interior of several long approximate repeats.
+   a)  Extension plot to compare the neighborhood and interior of several long approximate repeats. It measures how the repeats are extended beyond its longest duplicating segment. A big jump suggest that the repeat has some sparse SNPs while the steady growth beyond certain point suggest that it reaches the random flanking region. 
+   This graph is plotted when we extend to both sides of a repeat. 
+   ![alt tag](https://raw.github.com/kakitone/approxRepeats/master/regionBeyondRepeat/bestFit_twoSides/Escherichia_coli_536_approxRepeatAnalysisPlot.png)
+   This graph is plotted when we combine the extension from both sides, by greedily using the one that have larger extension to come first. 
+   ![alt tag](https://raw.github.com/kakitone/approxRepeats/master/regionBeyondRepeat/bestFit_greedy/Escherichia_coli_536_approxRepeatAnalysisPlot.png)   
 
-4. Generate scatter plot to characterize the extension and SNP rate of the long approximate repeats. 
+   b) Classification of approximate repeats and its spectrum
+   ![alt tag](https://raw.github.com/kakitone/approxRepeats/master/dataHammingDistance/Escherichia_coli_536_1approxrepeatstat.png)
+   i)  Scatter plot to characterize the extension and SNP rate of the long approximate repeats. This is shown in the top graph. For each approximate repeat, we plotted it charateristics on this 2D plot, with its color code being the length of teh approximate repeats.
 
-5. Generate exact repeat spectrum of simple, interleaved and triple exact repeats.
+   ii) Combined repeat spectrum of simple, interleaved and triple exact/approximate repeats. This is shown in the bottom graph. The red spectrum is for exact repeats while the blue spectrum is for approximate repeats. The green line is the longest exact repeat. 
 
-6. Generate approximate repeat spectrum of simple, interleaved and triple approximate repeats. 
-
-7. Generate combined repeat spectrum of simple, interleaved and triple exact/approximate repeats. 
-
+   c) Interleaved and triple approximate repeats
+   Moreover, we have the files that show the spectrum of interleaved and triple approximate repeats and their corresponding scatter behaviour. 
+   ![alt tag](https://raw.github.com/kakitone/approxRepeats/master/dataHammingDistance/Escherichia_coli_536_2approxinterleaverepeatstat.png)
