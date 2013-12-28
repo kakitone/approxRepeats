@@ -142,7 +142,15 @@ Here is a step-by-step commands to pipeline MUMMER with our approximate repeat a
    
    An example plot is shown here. ![alt tag](https://raw.github.com/kakitone/approxRepeats/master/examples/slidingWindowPlotEg.png)
 
-3. Genearte extension plot to compare the neighborhood and interior of several long approximate repeats.
+3. You can run the following to generate a couple of plots to understand the approximate repeats. 
+
+        python repeatStat/repeatStatMain.py "~/Downloads/MUMmer3.23/mummer" "ecoli.fasta" "Escherichia_coli_536" 30
+   
+   Here "~/Downloads/MUMmer3.23/mummer" is where you put MUMMER, "ecoli.fasta" is the genome file, "Escherichia_coli_536" is the working folder, and 30 is the number of long seed exact repeats to be used to generate the plots. 
+
+4. Let us understand what these plots tell us here. 
+
+5. Genearte extension plot to compare the neighborhood and interior of several long approximate repeats.
 
 4. Generate scatter plot to characterize the extension and SNP rate of the long approximate repeats. 
 
