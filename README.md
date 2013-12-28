@@ -134,7 +134,13 @@ Here is a step-by-step commands to pipeline MUMMER with our approximate repeat a
 
 1. Download the files in this repository. 
 
-2. Generate sliding window plot to view the neighborhood and interior of an approximate repeat. 
+2. Generate length-10 sliding window plot to view the neighborhood and interior of an approximate repeat by
+
+        python repeatStat/slidePlot.py "ecoli.fasta" "setup" 227625 4418733 10000 2000
+       
+   This commands means to plot the repeat of ecoli.fasta with repeat copies starting location being 227625, 4418733. The plot will span 10000 base pairs within/beyond the approximate repeat. We show 2000 base pairs before the starting locations.
+   
+   An example plot is shown here. ![alt tag](https://raw.github.com/kakitone/approxRepeats/master/examples/slidingWindowPlotEg.png)
 
 3. Genearte extension plot to compare the neighborhood and interior of several long approximate repeats.
 
