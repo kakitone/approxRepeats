@@ -158,10 +158,14 @@ Here is a step-by-step commands to pipeline MUMMER with our approximate repeat a
 
    b) Classification of approximate repeats and its spectrum
    ![alt tag](https://raw.github.com/kakitone/approxRepeats/master/dataHammingDistance/Escherichia_coli_536_1approxrepeatstat.png)
-   i)  Scatter plot to characterize the extension and SNP rate of the long approximate repeats. This is shown in the top graph. For each approximate repeat, we plotted it charateristics on this 2D plot, with its color code being the length of teh approximate repeats.
+   i)  Scatter plot to characterize the extension and SNP rate of the long approximate repeats. 
+   
+   This is shown in the top graph. For each approximate repeat, we plotted it charateristics on this 2D plot, with its color code being the length of teh approximate repeats.
 
-   ii) Combined repeat spectrum of simple, interleaved and triple exact/approximate repeats. This is shown in the bottom graph. The red spectrum is for exact repeats while the blue spectrum is for approximate repeats. The green line is the longest exact repeat. 
+   ii) Combined repeat spectrum of simple, interleaved and triple exact/approximate repeats. 
+   
+   This is shown in the bottom graph. The red spectrum is for exact repeats while the blue spectrum is for approximate repeats. The green line is the longest exact repeat. 
 
    c) Interleaved and triple approximate repeats
+   
    Moreover, we have the files that show the spectrum of interleaved and triple approximate repeats and their corresponding scatter behaviour. 
-   ![alt tag](https://raw.github.com/kakitone/approxRepeats/master/dataHammingDistance/Escherichia_coli_536_2approxinterleaverepeatstat.png)
