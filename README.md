@@ -168,4 +168,4 @@ Here is a step-by-step commands to pipeline MUMMER with our approximate repeat a
 
    c) Interleaved and triple approximate repeats
    
-   Moreover, we have the files that show the spectrum of interleaved and triple approximate repeats and their corresponding scatter behaviour. 
+   Moreover, we have the files that show the spectrum of interleaved and triple approximate repeats and their corresponding scatter behaviour. .
