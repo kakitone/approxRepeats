@@ -127,6 +127,7 @@ Here is a step-by-step tutorial to download, run and experiment with MUMMER.
      B = .BCCDAC.DCAC$
   </pre>
 
+11. You may now want to explore vaious functions offer by MUMmer by looking at their manual(pointer above). Some recommended and useful commands include **show-coords** and **mummerplot**.  
 
 Indepth analysis of the approximate repeat with our ApproxRepeatAnalyzer pipelined with MUMMER
 ----------------------------------------------------------------------------------------------
